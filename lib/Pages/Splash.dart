@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:my_app/Pages/Auth.dart';
 import 'package:my_app/Pages/HomeScreen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -34,7 +35,7 @@ class _SplashScreenState extends State<SplashScreen> {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => _isLoggedIn ? const HomeScreen() : HomeScreen(),
+          builder: (context) => _isLoggedIn ? const HomeScreen() : AuthPage(),
         ),
       );
     } catch (e) {

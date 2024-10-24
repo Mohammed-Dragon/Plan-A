@@ -1,7 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:my_app/Widgets/MyButton.dart';
-import 'package:my_app/Widgets/MySquareTile.dart';
 import 'package:my_app/Widgets/MyTextField.dart';
 
 class LoginPage extends StatefulWidget {
@@ -53,10 +52,10 @@ class _LoginPageState extends State<LoginPage> {
     }
   }
 
-  bool isValidEmail(String email) {
+  /*bool isValidEmail(String email) {
     final emailRegex = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
     return emailRegex.hasMatch(email);
-  }
+  }*/
 
   void showError(String message) {
     showDialog(
@@ -167,13 +166,33 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
                 const SizedBox(height: 20),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    SquareTile(imagePath: 'assets/google.png'),
-                    SizedBox(width: 25),
-                    SquareTile(imagePath: 'assets/apple.png')
-                  ],
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 30),
+                  child: ListTile(
+                    tileColor: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    leading: Image.asset(
+                      'assets/google.png',
+                      height: 40,
+                    ),
+                    /*Icon(
+                      Icons.logout,
+                      
+                      color: Colors.grey,
+                    ),*/
+                    title: Center(
+                      child: Text(
+                        "Sign in with Google",
+                        style: TextStyle(
+                          color: const Color.fromARGB(208, 50, 50, 53),
+                          fontSize: MediaQuery.of(context).size.width / 25,
+                        ),
+                      ),
+                    ),
+                    onTap: () {},
+                  ),
                 ),
                 const SizedBox(height: 22),
                 Row(

@@ -1,7 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:my_app/Widgets/MyButton.dart';
-import 'package:my_app/Widgets/MySquareTile.dart';
 import 'package:my_app/Widgets/MyTextField.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -168,14 +167,6 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                 ),
                 const SizedBox(height: 20),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    SquareTile(imagePath: 'assets/google.png'),
-                    SizedBox(width: 25),
-                    SquareTile(imagePath: 'assets/apple.png')
-                  ],
-                ),
                 const SizedBox(height: 22),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
